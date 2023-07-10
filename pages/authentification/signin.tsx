@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import CustomButton from '@/components/custom-button'
+import { signIn } from 'next-auth/react'
 import { SyntheticEvent } from 'react'
 
 const SignIn = () => {
@@ -77,6 +78,7 @@ const SignIn = () => {
                 alt="gmail"
                 width={24}
                 height={24}
+                onClick={(e) => signIn()}
               />
             </Link>
             <Link href="/">
