@@ -3,16 +3,17 @@ import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { checkEmail } from '@/utils/check-email'
+import { NextAuthOptions } from 'next-auth'
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
     }),
     GithubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET
+      clientId: process.env.GITHUB_CLIENT_ID as string,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET as string
     }),
     CredentialsProvider({
       type: 'credentials',
@@ -21,31 +22,25 @@ export const authOptions = {
         email: { label: 'Email', type: 'email' },
         password: { label: 'Password', type: 'password' },
         phoneNo: { label: 'Phone Number', type: 'text' }
-
-        // firstName: { label: 'firstName', type: 'text' },
-        // lastName: { label: 'lastName', type: 'text' },
-        // email: { label: 'email', type: 'email' },
-        // password: { label: 'password', type: 'password' },
-        // phoneNo: { label: 'phoneNo', type: 'text' }
       },
-      authorize(credentials) {
-        const email = checkEmail(credentials?.email)
+      authorize(credentials: any): any {
+        const email = checkEmail(credentials.email)
 
         if (email)
           return {
-            name: credentials?.name,
-            email: credentials?.email,
-            password: credentials?.password,
-            phoneNo: credentials?.phoneNo
+            name: credentials.name,
+            email: credentials.email,
+            password: credentials.password,
+            phoneNo: credentials.phoneNo
           }
 
         return null
       }
     })
   ],
-  // session: {
-  //   strategy: 'jwt'
-  // },
+  session: {
+    strategy: 'jwt'
+  },
   pages: {
     signIn: 'authentification/signin'
   }
