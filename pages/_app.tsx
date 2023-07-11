@@ -8,6 +8,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
     <>
       <Head>
         <title>Hope.ui</title>
+        <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <Provider session={session}>

@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div className="text-6xl font-semibold">
-      Welcome to the home page, <h1>{session?.user?.name}</h1>
+      Welcome to the home page, <h1>{session?.user?.email}</h1>
     </div>
   )
 }
