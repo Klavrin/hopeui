@@ -32,7 +32,6 @@ const SignUp = () => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault()
-
     // Basic form validation and sign-in process for showcase purposes.
     // Note: Handling credentials like this is extremely dangerous in real-life projects. Use proper authentication packages to ensure security.
     if (
@@ -47,13 +46,14 @@ const SignUp = () => {
       return alert("Passwords don't match.")
 
     const email = checkEmail(credentials.email)
-
     if (!email) return alert('You must include a proper email address.')
 
     signIn('credentials', {
       name: `${credentials.firstName} ${credentials.lastName}`,
       email: credentials.email,
-      password: credentials.password
+      password: credentials.password,
+      phoneNo: credentials.phoneNo,
+      callbackUrl: '/'
     })
   }
 
@@ -135,7 +135,7 @@ const SignUp = () => {
                   alt="gmail"
                   width={24}
                   height={24}
-                  onClick={() => signIn('google')}
+                  onClick={() => signIn('google', { callbackUrl: '/' })}
                 />
               </Link>
               <Link href="/">
@@ -144,7 +144,7 @@ const SignUp = () => {
                   alt="github"
                   width={24}
                   height={24}
-                  onClick={() => signIn('github')}
+                  onClick={() => signIn('github', { callbackUrl: '/' })}
                 />
               </Link>
             </div>

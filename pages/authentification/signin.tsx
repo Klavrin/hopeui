@@ -88,10 +88,13 @@ const SignIn = () => {
                   alt="gmail"
                   width={24}
                   height={24}
-                  onClick={() => signIn('google')}
+                  onClick={() => signIn('google', { callbackUrl: '/' })}
                 />
               </Link>
-              <Link href="/" onClick={() => signIn('github')}>
+              <Link
+                href="/"
+                onClick={() => signIn('github', { callbackUrl: '/' })}
+              >
                 <Image
                   src="/assets/github.svg"
                   alt="github"
