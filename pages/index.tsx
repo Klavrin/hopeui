@@ -1,5 +1,20 @@
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
+
 const Home = () => {
-  return <div className="text-6xl font-semibold">Home</div>
+  const router = useRouter()
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/authentification/signin')
+    }
+  })
+
+  return (
+    <div className="text-6xl font-semibold">
+      Welcome to the home page, <h1>{session?.user?.name}</h1>
+    </div>
+  )
 }
 
 export default Home
