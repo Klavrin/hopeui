@@ -5,13 +5,9 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
-      },
       colors: {
         primary: '#3A57E8',
         primaryLight: '#C4CCF8',
@@ -23,7 +19,7 @@ module.exports = {
         textColor4: '#6C757D',
         bg1: '#FFFFFF',
         bg2: '#e9ecef',
-        bg3: 'E3E3E3',
+        bg3: '#E3E3E3',
         defaultShadowColor: '#001129',
         success: '#1AA053',
         successLight: '#D3FFB3',

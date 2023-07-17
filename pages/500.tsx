@@ -1,10 +1,10 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const Page500 = () => {
   const metaData = {
-    heading: 'Oops! This Page is Not Working.',
-    description: 'The requested is Internal Server Error.'
-  }
+    heading: "Oops! This Page is Not Working.",
+    description: "The requested is Internal Server Error.",
+  };
 
   return (
     <section className="bg-gradient-to-l from-primaryDark via-skyBlue to-primaryDark">
@@ -29,7 +29,7 @@ const Page500 = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Page500
+export default Page500;

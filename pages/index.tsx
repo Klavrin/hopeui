@@ -1,5 +1,6 @@
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
+import { useTheme } from 'next-themes'
 
 const Home = () => {
   const router = useRouter()
@@ -10,9 +11,15 @@ const Home = () => {
     }
   })
 
+  const { setTheme } = useTheme()
+
   return (
     <div className="text-6xl font-semibold">
-      Welcome to the home page, <h1>{session?.user?.name}</h1>
+      <h1 className="text-primaryDark dark:text-primaryLight">
+        {session?.user?.name}
+      </h1>
+      <button onClick={() => setTheme('dark')}>Dark</button>{' '}
+      <button onClick={() => setTheme('light')}>Light</button>
     </div>
   )
 }

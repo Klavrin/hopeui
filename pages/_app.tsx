@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Provider from '@/components/provider'
+import { ThemeProvider } from 'next-themes'
 import '@/styles/global.css'
 
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
@@ -12,7 +13,13 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
       </Head>
 
       <Provider session={session}>
-        <Component {...pageProps} />
+        <ThemeProvider
+          enableSystem
+          attribute="class"
+          forcedTheme={Component.theme || null}
+        >
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Provider>
     </>
   )
