@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 import CustomButton from '@/components/custom-button'
-import { signIn, signOut } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import { SyntheticEvent } from 'react'
 
 const SignIn = () => {
@@ -75,9 +75,6 @@ const SignIn = () => {
           </div>
 
           <CustomButton title="Sign in" extraStyling="mx-auto" />
-          <button onClick={() => signOut()} style={{ color: 'red' }}>
-            SignOut
-          </button>
 
           <div className="mt-4">
             <h4 className="text-textColor1 text-base font-normal mb-4">

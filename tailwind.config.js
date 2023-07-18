@@ -46,7 +46,9 @@ module.exports = {
         textBorder: '#EEEEEE',
         muttedText: '#6C757D',
         // skyBlue: '#BAC5F7',
-        skyBlue: '#3B8AFF'
+        skyBlue: '#3B8AFF',
+        darkThemeBackground: '#222738',
+        veryDarkThemeBackground: '#151824'
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
@@ -57,7 +59,35 @@ module.exports = {
         md: '768px',
         lg: '1024px',
         xl: '1250px',
-        xxl: '1600px'
+        xxl: '1600px',
+        xxxl: '1920px'
+      },
+      keyframes: {
+        slideDownAndFade: {
+          from: { opacity: 0, transform: 'translateY(-2px)' },
+          to: { opacity: 1, transform: 'translateY(0)' }
+        },
+        slideLeftAndFade: {
+          from: { opacity: 0, transform: 'translateX(2px)' },
+          to: { opacity: 1, transform: 'translateX(0)' }
+        },
+        slideUpAndFade: {
+          from: { opacity: 0, transform: 'translateY(2px)' },
+          to: { opacity: 1, transform: 'translateY(0)' }
+        },
+        slideRightAndFade: {
+          from: { opacity: 0, transform: 'translateX(-2px)' },
+          to: { opacity: 1, transform: 'translateX(0)' }
+        }
+      },
+      animation: {
+        slideDownAndFade:
+          'slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        slideLeftAndFade:
+          'slideLeftAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        slideRightAndFade:
+          'slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)'
       }
     }
   },

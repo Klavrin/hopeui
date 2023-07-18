@@ -4,7 +4,16 @@ import Provider from '@/components/provider'
 import { ThemeProvider } from 'next-themes'
 import '@/styles/global.css'
 
-const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
+interface CustomAppProps extends AppProps {
+  Component: React.ComponentType<AppProps> & {
+    theme?: string
+  }
+}
+
+const App: React.FC<CustomAppProps> = ({
+  Component,
+  pageProps: { session, ...pageProps }
+}) => {
   return (
     <>
       <Head>
@@ -16,7 +25,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
         <ThemeProvider
           enableSystem
           attribute="class"
-          forcedTheme={Component.theme || null}
+          forcedTheme={Component.theme}
         >
           <Component {...pageProps} />
         </ThemeProvider>
