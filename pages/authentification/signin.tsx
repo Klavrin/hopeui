@@ -127,4 +127,5 @@ const SignIn = () => {
   )
 }
 
+SignIn.theme = 'light'
 export default SignIn

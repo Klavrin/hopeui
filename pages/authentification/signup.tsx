@@ -91,6 +91,12 @@ const SignUp = () => {
                   {item.title}
                 </h4>
                 <input
+                  type={
+                    item.label === 'password' ||
+                    item.label === 'confirmPassword'
+                      ? 'password'
+                      : 'text'
+                  }
                   className="w-full h-[33px] py-2 px-4 border border-primary rounded-[4px]"
                   onChange={(e) =>
                     setCredentials({
@@ -170,4 +176,5 @@ const SignUp = () => {
   )
 }
 
+SignUp.theme = 'light'
 export default SignUp

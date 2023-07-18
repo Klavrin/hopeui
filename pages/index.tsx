@@ -1,3 +1,4 @@
+import Navbar from '@/components/navbar/navbar'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
@@ -11,8 +12,8 @@ const Home = () => {
   })
 
   return (
-    <div className="text-6xl font-semibold">
-      Welcome to the home page, <h1>{session?.user?.name}</h1>
+    <div>
+      <Navbar session={session} />
     </div>
   )
 }
