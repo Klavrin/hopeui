@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 interface SidebarProps {
   sidebarOpened: boolean
@@ -9,6 +10,13 @@ interface SidebarProps {
 
 const Sidebar = ({ sidebarOpened, setSidebarOpened }: SidebarProps) => {
   const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return
 
   return (
     <>

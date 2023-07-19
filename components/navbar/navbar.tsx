@@ -1,6 +1,6 @@
-import InputField from '../input-field'
 import Image from 'next/image'
 import NavbarProfile from './navbar-profile'
+import InputField from '../input-field'
 import { useSession } from 'next-auth/react'
 
 interface NavbarProps {
@@ -13,13 +13,13 @@ const Navbar = ({ sidebarOpened }: NavbarProps) => {
   return (
     <header className="w-full h-[76px] bg-white dark:bg-darkThemeBackground">
       <nav
-        className={`flex justify-between items-center px-8 py-4 ${
-          sidebarOpened && 'pl-[289px]'
+        className={`max-w-[1920px] mx-auto flex justify-between items-center px-8 py-4 ${
+          sidebarOpened && 'lg:pl-[289px] pl-0'
         }`}
       >
         <InputField />
 
-        <div className="flex items-center gap-4">
+        <div className="lg:flex hidden items-center gap-4">
           <Image
             src="/assets/navbar/languages/english.svg"
             alt="english"
@@ -55,6 +55,10 @@ const Navbar = ({ sidebarOpened }: NavbarProps) => {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="lg:hidden block">
+          <NavbarProfile />
         </div>
       </nav>
     </header>

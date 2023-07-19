@@ -10,6 +10,9 @@ const NavbarDropdown = () => {
   const [alertOpened, setAlertOpened] = useState(false)
 
   const buttons = [
+    { title: 'Language', style: 'lg:hidden block' },
+    { title: 'Notifications', style: 'lg:hidden block' },
+    { title: 'Messages', style: 'lg:hidden block' },
     { title: 'Profile' },
     {
       title: 'Change Theme',
@@ -43,7 +46,7 @@ const NavbarDropdown = () => {
             <DropdownMenu.Item
               key={button.title}
               onClick={button.onItemClick}
-              className="group text-[13px] leading-none text-textColor2 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-300 data-[disabled]:pointer-events-none data-[highlighted]:bg-primary data-[highlighted]:text-white"
+              className={`group text-[13px] leading-none text-textColor2 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-300 data-[disabled]:pointer-events-none data-[highlighted]:bg-primary data-[highlighted]:text-white ${button.style}`}
             >
               {button.title}
             </DropdownMenu.Item>
