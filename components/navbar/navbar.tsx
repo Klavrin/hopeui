@@ -1,16 +1,14 @@
-import { Session } from 'next-auth'
 import InputField from '../input-field'
 import Image from 'next/image'
 import NavbarProfile from './navbar-profile'
+import { useSession } from 'next-auth/react'
 
-interface NavbarProps {
-  session: Session | null
-}
+const Navbar: React.FC = () => {
+  const { data: session } = useSession()
 
-const Navbar: React.FC<NavbarProps> = ({ session }) => {
   return (
-    <header className="dark:bg-darkThemeBackground">
-      <nav className="max-w-[1920px] h-[76px] mx-auto flex justify-between items-center px-8 py-4">
+    <header className="h-[76px] bg-white dark:bg-darkThemeBackground w-full">
+      <nav className="flex justify-between items-center px-8 py-4">
         <InputField />
 
         <div className="flex items-center gap-4">
@@ -21,6 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ session }) => {
             height={31}
             className="cursor-pointer"
           />
+          {/* TODO: Add a pusling ping that shows if you have an unread message */}
           <Image
             src="/assets/navbar/notification.svg"
             alt="notifications"

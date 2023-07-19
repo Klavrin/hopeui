@@ -88,6 +88,25 @@ module.exports = {
         slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
         slideRightAndFade:
           'slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)'
+      },
+      boxShadow: {
+        custom: '0px 10px 30px 0px rgba(17, 38, 146, 0.05)'
+      },
+      keyframes: {
+        openSidebar: {
+          '0%': {
+            transform: 'translate(-500px)',
+            opacity: 0
+          },
+          '100%': {
+            transform: 'translate(0px)',
+            opacity: 1,
+            zIndex: -10
+          }
+        }
+      },
+      animation: {
+        openSidebar: 'openSidebar 0.3s ease-in-out'
       }
     }
   },

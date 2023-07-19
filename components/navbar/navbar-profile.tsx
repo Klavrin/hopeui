@@ -1,10 +1,13 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { useSession, signOut } from 'next-auth/react'
 import { useTheme } from 'next-themes'
+import { useState } from 'react'
+import AlertPopup from '../alert-popup'
 
 const NavbarDropdown = () => {
   const { data: session } = useSession()
   const { setTheme, theme } = useTheme()
+  const [alertOpened, setAlertOpened] = useState(false)
 
   const buttons = [
     { title: 'Profile' },
@@ -12,11 +15,14 @@ const NavbarDropdown = () => {
       title: 'Change Theme',
       onItemClick: () => setTheme(theme === 'light' ? 'dark' : 'light')
     },
-    { title: 'Sign Out', onItemClick: () => signOut() }
+    { title: 'Sign Out', onItemClick: () => setAlertOpened(true) }
   ]
 
   return (
     <DropdownMenu.Root>
+      {alertOpened && (
+        <AlertPopup closeAlertPopup={() => setAlertOpened(false)} />
+      )}
       <DropdownMenu.Trigger asChild>
         <img
           src={session?.user?.image as string}
