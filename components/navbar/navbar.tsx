@@ -3,12 +3,20 @@ import Image from 'next/image'
 import NavbarProfile from './navbar-profile'
 import { useSession } from 'next-auth/react'
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  sidebarOpened: boolean
+}
+
+const Navbar = ({ sidebarOpened }: NavbarProps) => {
   const { data: session } = useSession()
 
   return (
-    <header className="h-[76px] bg-white dark:bg-darkThemeBackground w-full">
-      <nav className="flex justify-between items-center px-8 py-4">
+    <header className="w-full h-[76px] bg-white dark:bg-darkThemeBackground">
+      <nav
+        className={`flex justify-between items-center px-8 py-4 ${
+          sidebarOpened && 'pl-[289px]'
+        }`}
+      >
         <InputField />
 
         <div className="flex items-center gap-4">

@@ -1,6 +1,9 @@
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import NavigationElements from '@/components/navigation-elemets'
+import Navbar from '@/components/navbar/navbar'
+import Sidebar from '@/components/sidebar'
+import Layout from '@/components/layout'
 
 const Home = () => {
   const router = useRouter()
@@ -13,7 +16,8 @@ const Home = () => {
 
   return (
     <div>
-      <NavigationElements />
+      {/* <NavigationElements /> */}
+      <Layout>hello</Layout>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import { useSession, signOut } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import { useTheme } from 'next-themes'
 import { useState } from 'react'
 import AlertPopup from '../alert-popup'
@@ -23,6 +23,7 @@ const NavbarDropdown = () => {
       {alertOpened && (
         <AlertPopup closeAlertPopup={() => setAlertOpened(false)} />
       )}
+
       <DropdownMenu.Trigger asChild>
         <img
           src={session?.user?.image as string}
