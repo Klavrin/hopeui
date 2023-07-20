@@ -1,5 +1,5 @@
 import Navbar from './navbar/navbar'
-import Sidebar from './sidebar'
+import Sidebar from './sidebar/sidebar'
 import { useState } from 'react'
 
 interface LayoutProps {
@@ -18,7 +18,9 @@ const Layout = ({ children }: LayoutProps) => {
           sidebarOpened={sidebarOpened}
           setSidebarOpened={setSidebarOpened}
         />
-        <div className={sidebarOpened ? 'lg:ml-[257px] ml-0' : 'ml-0'}>
+        <div
+          className={`w-full ${sidebarOpened ? 'lg:ml-[257px] ml-0' : 'ml-0'}`}
+        >
           {children}
         </div>
       </div>

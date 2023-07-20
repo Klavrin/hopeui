@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import SidebarTabs from './sidebar-tabs'
 
 interface SidebarProps {
   sidebarOpened: boolean
@@ -54,6 +55,8 @@ const Sidebar = ({ sidebarOpened, setSidebarOpened }: SidebarProps) => {
             height={43}
           />
         </Link>
+
+        <SidebarTabs />
       </div>
     </>
   )

@@ -1,8 +1,9 @@
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import Layout from '@/components/layout'
+import FrontPageGraphicSide from '@/components/front-page/front-page-graphic-side'
 
-const Home = () => {
+const FrontPage = () => {
   const router = useRouter()
   useSession({
     required: true,
@@ -13,9 +14,11 @@ const Home = () => {
 
   return (
     <div>
-      <Layout>hello</Layout>
+      <Layout>
+        <FrontPageGraphicSide />
+      </Layout>
     </div>
   )
 }
 
-export default Home
+export default FrontPage
