@@ -31,7 +31,6 @@ const SidebarTabs = () => {
 
   return (
     <div className="h-[91.2vh] px-3 overflow-y-auto">
-      {/* Adding a custom vh to make the sidebar tabs fit perfectly on the screen and also force the sidebar to not affect other elements in the component with its height. */}
       <div>
         <h2 className="text-textColor3 text-base font-semibold leading-7 mt-6 mb-4 ml-6">
           Home
@@ -135,6 +134,14 @@ const SidebarTabs = () => {
 
         <hr className="h-[1px] border-none mx-[26px] bg-bg2 dark:bg-[#343948]" />
       </div>
+
+      <Image
+        src="/assets/sidebar/hashtag-sidebar.svg"
+        alt=""
+        width={543}
+        height={543}
+        className="overflow-hidden relative right-3"
+      />
     </div>
   )
 }

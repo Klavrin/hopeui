@@ -40,7 +40,7 @@ const Sidebar = ({ sidebarOpened, setSidebarOpened }: SidebarProps) => {
       </div>
 
       <div
-        className={`absolute top-0 min-w-[257px] min-h-screen bg-white dark:bg-darkThemeBackground shadow-custom animate-openSidebar ${
+        className={`absolute top-0 w-[257px] min-h-screen bg-white dark:bg-darkThemeBackground shadow-custom animate-openSidebar ${
           sidebarOpened ? 'block' : 'hidden'
         }`}
       >
