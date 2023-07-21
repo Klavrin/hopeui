@@ -21,7 +21,7 @@ const Sidebar = ({ sidebarOpened, setSidebarOpened }: SidebarProps) => {
 
   return (
     <>
-      <div className="h-[76px] flex items-center absolute top-0 z-10">
+      <div className="h-[76px] flex items-center absolute top-0 z-50">
         <button
           onClick={() => setSidebarOpened(!sidebarOpened)}
           className={`bg-primary w-[30px] h-[30px] rounded-full flex justify-center items-center shadow-lg absolute transition-[translate_0.5s_ease-in-out] ${

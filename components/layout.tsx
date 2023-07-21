@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
   const [sidebarOpened, setSidebarOpened] = useState(true)
 
   return (
-    <div className="">
+    <div className="h-full bg-bg2 dark:bg-veryDarkThemeBackground">
       <Navbar sidebarOpened={sidebarOpened} />
 
       <div className="flex max-w-[1920px] mx-auto">

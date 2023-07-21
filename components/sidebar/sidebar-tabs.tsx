@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTheme } from 'next-themes'
 
 const SidebarTabs = () => {
+  const { theme } = useTheme()
+
   const sidebarTabs = {
     home: [
       {
@@ -30,7 +33,7 @@ const SidebarTabs = () => {
   }
 
   return (
-    <div className="h-[91.2vh] px-3 overflow-y-auto">
+    <div className="h-[92.2vh] px-3 overflow-y-auto">
       <div>
         <h2 className="text-textColor3 text-base font-semibold leading-7 mt-6 mb-4 ml-6">
           Home
@@ -140,7 +143,9 @@ const SidebarTabs = () => {
         alt=""
         width={543}
         height={543}
-        className="overflow-hidden relative right-3"
+        className={`overflow-hidden relative right-3 ${
+          theme === 'light' ? 'opacity-20' : 'opacity-5'
+        }`}
       />
     </div>
   )
