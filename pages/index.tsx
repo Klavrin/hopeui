@@ -20,7 +20,7 @@ const FrontPage = () => {
         <FrontPageGraphicSide />
         <SummaryCards />
 
-        <div className="md:px-10 px-4">
+        <div className="md:px-10 px-4 relative bottom-[18px]">
           <Revenue />
         </div>
       </Layout>
