@@ -47,8 +47,8 @@ const Chart = () => {
   ]
 
   return (
-    <ResponsiveContainer width={1014} height={314} className="">
-      <AreaChart data={data} margin={{ right: 30 }}>
+    <ResponsiveContainer className="max-w-[1014px] h-[314px] relative right-4">
+      <AreaChart data={data}>
         <defs>
           <linearGradient
             id="gradientColor"

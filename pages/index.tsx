@@ -18,10 +18,10 @@ const FrontPage = () => {
     <section>
       <Layout>
         <FrontPageGraphicSide />
+        <SummaryCards />
 
-        <div className="px-[40px]">
-          <SummaryCards />
-          {/* <Revenue /> */}
+        <div className="md:px-10 px-4">
+          <Revenue />
         </div>
       </Layout>
     </section>
