@@ -13,13 +13,13 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="h-full bg-bg2 dark:bg-veryDarkThemeBackground">
       <Navbar sidebarOpened={sidebarOpened} />
 
-      <div className="flex max-w-[1920px] min-h-full mx-auto">
+      <div className="flex max-w-[1920px] relative min-h-full mx-auto">
         <Sidebar
           sidebarOpened={sidebarOpened}
           setSidebarOpened={setSidebarOpened}
         />
         <div
-          className={`w-full ${sidebarOpened ? 'lg:pl-[257px] pl-0' : 'ml-0'}`}
+          className={`w-full ${sidebarOpened ? 'lg:pl-[257px] pl-0' : 'pl-0'}`}
         >
           {children}
         </div>

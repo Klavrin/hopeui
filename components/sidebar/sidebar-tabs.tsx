@@ -143,7 +143,7 @@ const SidebarTabs = () => {
         alt=""
         width={543}
         height={543}
-        className={`overflow-hidden relative right-3 ${
+        className={`overflow-hidden absolute right-3 ${
           theme === 'light' ? 'opacity-20' : 'opacity-5'
         }`}
       />
