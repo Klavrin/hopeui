@@ -17,20 +17,18 @@ const FrontPage = () => {
   })
 
   return (
-    <section>
-      <Layout>
-        <FrontPageGraphicSide />
-        <SummaryCards />
+    <Layout>
+      <FrontPageGraphicSide />
+      <SummaryCards />
 
-        <div className="flex flex-col gap-10 relative md:bottom-[18px] bottom-0 md:px-10 px-4">
-          <Revenue />
-          <div className="md:flex block gap-10">
-            <Earnings />
-            <Conversations />
-          </div>
+      <div className="flex flex-col gap-10 relative md:bottom-[18px] bottom-0 md:px-10 px-4">
+        <Revenue />
+        <div className="flex lg:flex-row flex-col gap-10">
+          <Earnings />
+          <Conversations />
         </div>
-      </Layout>
-    </section>
+      </div>
+    </Layout>
   )
 }
 

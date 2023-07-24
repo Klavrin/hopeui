@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Earnings = () => {
   return (
-    <div className="max-w-[436px] bg-bg1 dark:bg-darkThemeBackground rounded-lg p-8">
+    <div className="lg:min-w-[436px] min-w-full bg-bg1 dark:bg-darkThemeBackground rounded-lg p-8">
       <div className="flex justify-between mb-10">
         <h3 className="text-textColor1 dark:text-[#D3D3D3] text-[19px] font-medium leading-[33.25px]">
           Earnings
@@ -21,7 +21,7 @@ const Earnings = () => {
         </div>
       </div>
 
-      <div className="flex md:flex-row flex-col-reverse items-center gap-[37px]">
+      <div className="flex sm:flex-row flex-col-reverse justify-center items-center gap-[37px]">
         <Image
           src="/assets/front-page/pie-chart.svg"
           alt=""
@@ -29,7 +29,7 @@ const Earnings = () => {
           height={206}
         />
 
-        <div className="md:block flex md:gap-0 gap-4">
+        <div className="sm:block flex md:gap-0 gap-4">
           <div className="flex items-center gap-6 md:mb-12 mb-0">
             <figure className="w-[13px] h-[13px] bg-primary rounded-full" />
 

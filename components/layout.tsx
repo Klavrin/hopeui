@@ -10,10 +10,11 @@ const Layout = ({ children }: LayoutProps) => {
   const [sidebarOpened, setSidebarOpened] = useState(true)
 
   return (
-    <div className="h-full bg-bg2 dark:bg-veryDarkThemeBackground">
+    // <section className="h-full bg-bg2 dark:bg-veryDarkThemeBackground">
+    <>
       <Navbar sidebarOpened={sidebarOpened} />
 
-      <div className="flex max-w-[1920px] relative min-h-full mx-auto">
+      <section className="flex max-w-[1920px] relative min-h-full mx-auto h-full bg-bg2 dark:bg-veryDarkThemeBackground">
         <Sidebar
           sidebarOpened={sidebarOpened}
           setSidebarOpened={setSidebarOpened}
@@ -23,8 +24,8 @@ const Layout = ({ children }: LayoutProps) => {
         >
           {children}
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   )
 }
 
