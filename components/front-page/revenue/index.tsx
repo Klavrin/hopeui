@@ -1,4 +1,5 @@
 import Chart from './chart'
+import Image from 'next/image'
 
 const Revenue = () => {
   return (
@@ -29,10 +30,17 @@ const Revenue = () => {
           </div>
         </div>
 
-        <div>
+        <div className="flex gap-2">
           <p className="text-textColor2 text-base font-normal leading-7">
             This week
           </p>
+
+          <Image
+            src="/assets/front-page/arrow-down.svg"
+            alt=""
+            width={12}
+            height={12}
+          />
         </div>
       </div>
 

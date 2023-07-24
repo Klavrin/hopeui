@@ -33,7 +33,7 @@ const SidebarTabs = () => {
   }
 
   return (
-    <div className="h-[92.2vh] px-3 overflow-y-auto">
+    <div className="h-full px-3 overflow-y-auto">
       <div>
         <h2 className="text-textColor3 text-base font-semibold leading-7 mt-6 mb-4 ml-6">
           Home

@@ -1,6 +1,6 @@
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 interface DataItem {
   title: string
@@ -11,9 +11,11 @@ interface DataItem {
 const SummaryCards = () => {
   const [emblaRef] = useEmblaCarousel({ loop: false })
   const [divWidth, setDivWidth] = useState(0)
-  const divRef = useRef<any>(null)
 
   useEffect(() => {
+    //? Using useRef here would cause errors when the cleanup function is called (component unmounts). Should I go with this implementation or use useRef instead?
+    const sectionCards = document.querySelector('.section-cards')
+
     const resizeObserver = new ResizeObserver((entries) => {
       entries.forEach((entry) => {
         const newWidth = entry.target.clientWidth
@@ -21,10 +23,10 @@ const SummaryCards = () => {
       })
     })
 
-    resizeObserver.observe(divRef.current)
+    resizeObserver.observe(sectionCards as Element)
 
     return () => {
-      resizeObserver.unobserve(divRef.current)
+      resizeObserver.unobserve(sectionCards as Element)
     }
   }, [])
 
@@ -43,8 +45,7 @@ const SummaryCards = () => {
       ref={divWidth < 1590 ? emblaRef : null}
     >
       <div
-        ref={divRef}
-        className="w-full mx-auto flex gap-10 md:px-0 px-8"
+        className="section-cards | w-full mx-auto flex gap-10 md:px-0 px-8"
         style={{ justifyContent: divWidth < 1590 ? 'start' : 'center' }}
       >
         {data.map((item) => (
