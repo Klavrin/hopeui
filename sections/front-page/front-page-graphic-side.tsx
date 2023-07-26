@@ -12,7 +12,6 @@ const FrontPageGraphicSide = () => {
           projects for FREE.
         </p>
       </div>
-
       <button className="min-w-[210px] h-[40px] bg-bg1/[0.10] text-bg1 text-base font-normal leading-normal shadow-lg flex justify-center items-center gap-2">
         <Image
           src="/assets/front-page/microphone.svg"

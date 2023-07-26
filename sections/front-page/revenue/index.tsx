@@ -1,9 +1,11 @@
-import Chart from './chart'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
+const Chart = dynamic(() => import('./chart'), { ssr: false })
 
 const Revenue = () => {
   return (
-    <div className="max-w-[1064px] h-[447px] bg-white dark:bg-darkThemeBackground flex flex-col rounded-lg p-6">
+    // <div className="max-w-[1064px] h-[447px] bg-white dark:bg-darkThemeBackground flex flex-col rounded-lg p-6">
+    <div className="w-full h-[447px] bg-white dark:bg-darkThemeBackground flex flex-col rounded-lg p-6">
       <div className="flex flex-row justify-between items-center mb-6">
         <div>
           <h2 className="text-textColor1 dark:text-white text-[19px] font-medium leading-[33.25px]">
