@@ -8,7 +8,7 @@ const Revenue = () => {
     <div className="w-full h-[447px] bg-white dark:bg-darkThemeBackground flex flex-col rounded-lg p-6">
       <div className="flex flex-row justify-between items-center mb-6">
         <div>
-          <h2 className="text-textColor1 dark:text-white text-[19px] font-medium leading-[33.25px]">
+          <h2 className="text-textColor1 dark:text-[#D3D3D3] text-[19px] font-medium leading-[33.25px]">
             $855.8K
           </h2>
           <p className="text-textColor2 text-base font-normal leading-7">

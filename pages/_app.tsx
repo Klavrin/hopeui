@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Provider from '@/components/provider'
 import { ThemeProvider } from 'next-themes'
 import '@/styles/global.css'
+import 'leaflet/dist/leaflet.css'
 
 interface CustomAppProps extends AppProps {
   Component: React.ComponentType<AppProps> & {

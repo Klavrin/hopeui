@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const FrontPageGraphicSide = () => {
+const PageGraphicSide = () => {
   return (
     <div className="w-full min-h-[200px] flex justify-between md:flex-row flex-col rounded-b-2xl px-10 py-[17px] bg-[url('/assets/front-page/graphic-side.png')] bg-cover">
       <div className="mr-6">
@@ -25,4 +25,4 @@ const FrontPageGraphicSide = () => {
   )
 }
 
-export default FrontPageGraphicSide
+export default PageGraphicSide

@@ -1,7 +1,7 @@
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import Layout from '@/components/layout'
-import FrontPageGraphicSide from '@/sections/front-page/front-page-graphic-side'
+import PageGraphicSide from '@/components/page-graphic-side'
 import Revenue from '@/sections/front-page/revenue'
 import SummaryCards from '@/sections/front-page/summary-cards'
 import Earnings from '@/sections/front-page/earnings'
@@ -23,7 +23,7 @@ const FrontPage = () => {
 
   return (
     <Layout>
-      <FrontPageGraphicSide />
+      <PageGraphicSide />
       <SummaryCards />
 
       <div className="xl:flex block md:px-10 px-4 md:mb-0 mb-5">
@@ -42,8 +42,6 @@ const FrontPage = () => {
           <ActivityOverview />
         </div>
       </div>
-
-      <Footer />
     </Layout>
   )
 }

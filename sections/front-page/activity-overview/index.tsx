@@ -5,7 +5,7 @@ const ActivityOverview = () => {
   const activityData = [
     { title: '$2400, Purchase', time: '11 JUL 8:10 PM' },
     { title: 'New order #8744152', time: '11 JUL 11 PM' },
-    { title: 'Affilate Payout', time: '11 JUL 7:64 PM' },
+    { title: 'Affiliate Payout', time: '11 JUL 7:64 PM' },
     { title: 'New user added', time: '11 JUL 1:21 AM' },
     { title: 'Product added', time: '11 JUL 4:50 AM' }
   ]
