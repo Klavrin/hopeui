@@ -2,6 +2,7 @@ import Image from 'next/image'
 import NavbarProfile from './navbar-profile'
 import InputField from '../input-field'
 import { useSession } from 'next-auth/react'
+import NavbarAlert from './navbar-alert'
 
 interface NavbarProps {
   sidebarOpened: boolean
@@ -11,7 +12,8 @@ const Navbar = ({ sidebarOpened }: NavbarProps) => {
   const { data: session } = useSession()
 
   return (
-    <header className="w-full h-[76px] bg-white dark:bg-darkThemeBackground">
+    <header className="w-full bg-white dark:bg-darkThemeBackground">
+      <NavbarAlert />
       <nav
         className={`max-w-[1920px] mx-auto flex justify-between items-center px-8 py-4 ${
           sidebarOpened && 'lg:pl-[289px] pl-0'

@@ -26,7 +26,7 @@ const FrontPage = () => {
       <FrontPageGraphicSide />
       <SummaryCards />
 
-      <div className="xl:flex block md:px-10 px-4">
+      <div className="xl:flex block md:px-10 px-4 md:mb-0 mb-5">
         <div className="w-full flex flex-col gap-10 relative md:bottom-[18px] bottom-0 mr-10">
           <Revenue />
           <div className="flex lg:flex-row flex-col gap-10">
@@ -36,7 +36,7 @@ const FrontPage = () => {
           <EnterpriseClients />
         </div>
 
-        <div className="xl:w-1/4 w-full relative md:bottom-[18px] bottom-0 xl:mt-0 mt-10 flex flex-col gap-10 mb-10 ">
+        <div className="xl:w-1/4 w-full relative md:bottom-[18px] bottom-0 xl:mt-0 mt-10 flex flex-col gap-10">
           <Dashboard />
           <Visitors />
           <ActivityOverview />
