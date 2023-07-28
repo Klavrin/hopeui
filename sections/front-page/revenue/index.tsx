@@ -25,7 +25,7 @@ const Revenue = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <figure className="w-[13px] h-[13px] bg-informationLight rounded-full" />
+            <figure className="w-[13px] h-[13px] bg-information++ rounded-full" />
             <p className="text-textColor2 text-base font-normal leading-7">
               Cost
             </p>

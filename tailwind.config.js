@@ -35,6 +35,7 @@ module.exports = {
         pendingLight: '#FFEFB3',
         pendingDark: '#B28E00',
         information: '#08B1BA',
+        'information++': '#379BFF',
         informationLight: '#85F4FA',
         informationDark: '#05666C',
         violet: '#9A18FF',
@@ -60,6 +61,7 @@ module.exports = {
         md: '768px',
         lg: '1024px',
         xl: '1250px',
+        xl2: '1450px',
         xxl: '1600px',
         xxxl: '1920px'
       },

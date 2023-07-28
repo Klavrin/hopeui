@@ -2,7 +2,8 @@ import Image from 'next/image'
 
 const Earnings = () => {
   return (
-    <div className="lg:min-w-[436px] min-w-full bg-bg1 dark:bg-darkThemeBackground rounded-lg p-8">
+    // <div className="lg:min-w-[436px] min-w-full bg-bg1 dark:bg-darkThemeBackground rounded-lg p-8">
+    <div className="lg:w-1/2 w-full bg-bg1 dark:bg-darkThemeBackground rounded-lg p-8">
       <div className="flex justify-between mb-10">
         <h3 className="text-textColor1 dark:text-[#D3D3D3] text-[19px] font-medium leading-[33.25px]">
           Earnings

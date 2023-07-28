@@ -43,17 +43,23 @@ const ClientsTable = () => {
 
   return (
     <div>
-      <div className="max-w-[1064px] bg-[#F5F6FA] dark:bg-veryDarkThemeBackground grid md:grid-cols-[2fr,1fr,1fr,1fr] grid-cols-2 p-2">
+      <div className="w-full bg-[#F5F6FA] dark:bg-veryDarkThemeBackground grid md:grid-cols-[2fr,1fr,1fr,1fr] grid-cols-2 p-2">
         {tableHeaderData.map((item) => (
-          <h3 className="text-textColor2 text-base font-medium leading-7">
+          <h3
+            key={item}
+            className="text-textColor2 text-base font-medium leading-7"
+          >
             {item}
           </h3>
         ))}
       </div>
 
-      <div className="max-w-[1064px] grid grid-rows-4">
+      <div className="w-full grid grid-rows-4">
         {tableData.map((item) => (
-          <div className="grid md:grid-cols-[2fr,1fr,1fr,1fr] grid-cols-2 gap-7 items-center odd:bg-white even:bg-[#FBFCFC] dark:odd:bg-darkThemeBackground dark:even:bg-[#252B3B] border-b last:border-none border-bg2 dark:border-[#30384F] py-4 md:px-0 px-4 last:rounded-b-lg">
+          <div
+            key={item.title}
+            className="grid md:grid-cols-[2fr,1fr,1fr,1fr] grid-cols-2 gap-7 items-center odd:bg-white even:bg-[#FBFCFC] dark:odd:bg-darkThemeBackground dark:even:bg-[#252B3B] border-b last:border-none border-bg2 dark:border-[#30384F] py-4 md:px-0 px-4 last:rounded-b-lg"
+          >
             <div className="flex items-center gap-4 md:ml-4 ml-0 rounded-b-lg">
               <Image
                 src={`/assets/front-page/enterprise-clients/${item.companyLogo}.svg`}
@@ -68,7 +74,10 @@ const ClientsTable = () => {
 
             <div className="sm:flex grid grid-cols-[45px,45px]">
               {item.contacts.map((contact) => (
-                <div className="min-w-[45px] h-[45px] bg-white dark:bg-primaryVeryDark rounded-full border-2 border-primary text-primary text-base font-medium leading-7 flex justify-center items-center relative sm:[&:nth-child(2)]:right-[12px] sm:[&:nth-child(3)]:right-[24px] sm:[&:nth-child(4)]:right-[36px]">
+                <div
+                  key={contact}
+                  className="min-w-[45px] h-[45px] bg-white dark:bg-primaryVeryDark rounded-full border-2 border-primary text-primary text-base font-medium leading-7 flex justify-center items-center relative sm:[&:nth-child(2)]:right-[12px] sm:[&:nth-child(3)]:right-[24px] sm:[&:nth-child(4)]:right-[36px]"
+                >
                   {contact}
                 </div>
               ))}

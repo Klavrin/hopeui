@@ -1,10 +1,14 @@
 import ApexCharts, { Props } from 'react-apexcharts'
+import { useTheme } from 'next-themes'
 
 const Chart = () => {
+  const { theme } = useTheme()
+
   const chartOptions: Props = {
     options: {
       chart: {
-        toolbar: { show: false }
+        toolbar: { show: false },
+        foreColor: theme === 'light' ? '#8A92A6' : '#5C6CA5'
       },
       xaxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug']
@@ -24,8 +28,9 @@ const Chart = () => {
           stops: [0, 70]
         }
       },
-      annotations: {},
-      markers: {}
+      tooltip: {
+        theme: theme === 'light' ? 'light' : 'dark'
+      }
     },
     series: [
       {
@@ -42,7 +47,7 @@ const Chart = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full absolute -translate-x-6 translate-y-20 px-6">
       <ApexCharts
         options={chartOptions.options}
         series={chartOptions.series}

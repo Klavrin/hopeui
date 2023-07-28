@@ -1,8 +1,11 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
+const ColumnChart = dynamic(() => import('./column-chart'), { ssr: false })
 
 const Conversations = () => {
   return (
-    <div className="lg:max-w-[588px] w-full bg-bg1 dark:bg-darkThemeBackground rounded-lg p-6 flex flex-col justify-between">
+    // <div className="lg:max-w-[588px] w-full bg-bg1 dark:bg-darkThemeBackground rounded-lg p-6 flex flex-col justify-between">
+    <div className="lg:w-1/2 w-full bg-bg1 dark:bg-darkThemeBackground rounded-lg p-6 flex flex-col justify-between">
       <div className="flex justify-between mb-6">
         <h3 className="text-textColor1 dark:text-[#D3D3D3] text-[19px] font-medium leading-[33.25px]">
           Conversations
@@ -22,13 +25,7 @@ const Conversations = () => {
       </div>
 
       <div className="flex justify-center items-center h-full">
-        <Image
-          src="/assets/front-page/bar-chart.svg"
-          alt=""
-          width={539}
-          height={238}
-          className="mx-auto max-w-full max-h-full w-auto h-auto"
-        />
+        <ColumnChart />
       </div>
     </div>
   )

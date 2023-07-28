@@ -8,7 +8,9 @@ import Earnings from '@/sections/front-page/earnings'
 import Conversations from '@/sections/front-page/conversations'
 import EnterpriseClients from '@/sections/front-page/enterprise-clients'
 import Footer from '@/components/footer'
-import Dashboard from '@/sections/front-page/debit-card'
+import Dashboard from '@/sections/front-page/dashboard'
+import Visitors from '@/sections/front-page/visitors'
+import ActivityOverview from '@/sections/front-page/activity-overview'
 
 const FrontPage = () => {
   const router = useRouter()
@@ -24,8 +26,8 @@ const FrontPage = () => {
       <FrontPageGraphicSide />
       <SummaryCards />
 
-      <div className="flex">
-        <div className="w-full flex flex-col gap-10 relative md:bottom-[18px] bottom-0 md:px-10 px-4">
+      <div className="xl:flex block md:px-10 px-4">
+        <div className="w-full flex flex-col gap-10 relative md:bottom-[18px] bottom-0 mr-10">
           <Revenue />
           <div className="flex lg:flex-row flex-col gap-10">
             <Earnings />
@@ -34,11 +36,10 @@ const FrontPage = () => {
           <EnterpriseClients />
         </div>
 
-        {/* <div className="w-full md:bottom-[18px] bottom-0 md:pr-10 pr-4">
+        <div className="xl:w-1/4 w-full relative md:bottom-[18px] bottom-0 xl:mt-0 mt-10 flex flex-col gap-10 mb-10 ">
           <Dashboard />
-        </div> */}
-        <div className="w-1/3 relative md:bottom-[18px] bottom-0 md:mr-10 mr-4">
-          <Dashboard />
+          <Visitors />
+          <ActivityOverview />
         </div>
       </div>
 

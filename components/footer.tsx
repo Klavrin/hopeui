@@ -8,7 +8,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="w-full flex justify-between py-4 px-6 bg-[#FEFEFF] dark:bg-darkThemeBackground">
+    <footer className="w-full flex md:flex-row flex-col md:justify-between md:gap-0 gap-2 items-center py-4 px-6 bg-[#FEFEFF] dark:bg-darkThemeBackground">
       <div className="flex gap-6">
         <Link
           href="#"

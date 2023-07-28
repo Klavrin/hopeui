@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
           setSidebarOpened={setSidebarOpened}
         />
         <div
-          className={`w-full ${sidebarOpened ? 'xl:pl-[257px] pl-0' : 'pl-0'}`}
+          className={`w-full ${sidebarOpened ? 'xl2:pl-[257px] pl-0' : 'pl-0'}`}
         >
           {children}
         </div>

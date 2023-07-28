@@ -3,7 +3,7 @@ import ClientsTable from './clients-table'
 
 const EnterpriseClients = () => {
   return (
-    <div>
+    <div className="w-full">
       <CardHeader />
       <ClientsTable />
     </div>
