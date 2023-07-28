@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import SidebarTabs from './sidebar-tabs'
 
 interface SidebarProps {
   sidebarOpened: boolean
@@ -20,7 +21,7 @@ const Sidebar = ({ sidebarOpened, setSidebarOpened }: SidebarProps) => {
 
   return (
     <>
-      <div className="h-[76px] flex items-center absolute top-0 z-10">
+      <div className="h-[76px] flex items-center absolute -translate-y-[75px] z-50">
         <button
           onClick={() => setSidebarOpened(!sidebarOpened)}
           className={`bg-primary w-[30px] h-[30px] rounded-full flex justify-center items-center shadow-lg absolute transition-[translate_0.5s_ease-in-out] ${
@@ -39,7 +40,7 @@ const Sidebar = ({ sidebarOpened, setSidebarOpened }: SidebarProps) => {
       </div>
 
       <div
-        className={`absolute top-0 min-w-[257px] min-h-screen bg-white dark:bg-darkThemeBackground shadow-custom animate-openSidebar ${
+        className={`w-[257px] min-h-[calc(100%+75px)] overflow-hidden absolute -translate-y-[75px] bg-white dark:bg-darkThemeBackground shadow-custom z-40 ${
           sidebarOpened ? 'block' : 'hidden'
         }`}
       >
@@ -54,6 +55,8 @@ const Sidebar = ({ sidebarOpened, setSidebarOpened }: SidebarProps) => {
             height={43}
           />
         </Link>
+
+        <SidebarTabs />
       </div>
     </>
   )

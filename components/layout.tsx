@@ -1,5 +1,5 @@
 import Navbar from './navbar/navbar'
-import Sidebar from './sidebar'
+import Sidebar from './sidebar/sidebar'
 import { useState } from 'react'
 
 interface LayoutProps {
@@ -10,19 +10,22 @@ const Layout = ({ children }: LayoutProps) => {
   const [sidebarOpened, setSidebarOpened] = useState(true)
 
   return (
-    <div className="">
+    // < className="h-full bg-bg2 dark:bg-veryDarkThemeBackground">
+    <>
       <Navbar sidebarOpened={sidebarOpened} />
 
-      <div className="flex max-w-[1920px] mx-auto">
+      <section className="flex max-w-[1920px] relative min-h-full mx-auto h-full bg-bg2 dark:bg-veryDarkThemeBackground">
         <Sidebar
           sidebarOpened={sidebarOpened}
           setSidebarOpened={setSidebarOpened}
         />
-        <div className={sidebarOpened ? 'lg:ml-[257px] ml-0' : 'ml-0'}>
+        <div
+          className={`w-full ${sidebarOpened ? 'xl2:pl-[257px] pl-0' : 'pl-0'}`}
+        >
           {children}
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   )
 }
 
