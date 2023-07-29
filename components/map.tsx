@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 
 function Map() {
   return (
-    <div className="h-[555px] bg-bg1 dark:bg-darkThemeBackground md:px-6 px-2 md:pt-6 pt-2 md:pb-24 pb-[82px] rounded-lg">
+    <div className="h-[555px] bg-bg1 dark:bg-darkThemeBackground md:px-6 px-2 md:pt-6 pt-2 md:pb-24 pb-[58px] rounded-lg">
       <h2 className="text-textColor1 dark:text-[#D3D3D3] text-[23px] font-medium leading-[30px]">
         Vector
       </h2>

@@ -15,6 +15,9 @@ const ColumnChart = () => {
       xaxis: {
         categories: ['S', 'M', 'T', 'W', 'T', 'F', 'S', 'M', 'T', 'W']
       },
+      grid: {
+        borderColor: theme === 'light' ? '#8A92A6' : '#5C6CA5'
+      },
       dataLabels: {
         enabled: false
       },
@@ -38,7 +41,7 @@ const ColumnChart = () => {
       {
         name: 'Successful Deals',
         data: [40, 50, 35, 60, 40, 60, 60, 30, 50, 35],
-        color: '#379BFF'
+        color: '#85F4FA'
       }
     ]
   }

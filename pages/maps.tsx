@@ -1,9 +1,19 @@
 import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
+import { useSession } from 'next-auth/react'
 import Layout from '@/components/layout'
 import PageGraphicSide from '@/components/page-graphic-side'
 const Map = dynamic(() => import('@/components/map'), { ssr: false })
 
 const Maps = () => {
+  const router = useRouter()
+  useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/authentification/signin')
+    }
+  })
+
   return (
     <Layout>
       <PageGraphicSide />

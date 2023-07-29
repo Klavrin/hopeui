@@ -14,16 +14,20 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <Navbar sidebarOpened={sidebarOpened} />
 
-      <section className="flex max-w-[1920px] relative min-h-full mx-auto h-full bg-bg2 dark:bg-veryDarkThemeBackground">
-        <Sidebar
-          sidebarOpened={sidebarOpened}
-          setSidebarOpened={setSidebarOpened}
-        />
-        <div
-          className={`w-full ${sidebarOpened ? 'xl2:pl-[257px] pl-0' : 'pl-0'}`}
-        >
-          {children}
-          <Footer />
+      <section className="relative min-h-full bg-bg2 dark:bg-veryDarkThemeBackground">
+        <div className="flex max-w-[1920px] mx-auto">
+          <Sidebar
+            sidebarOpened={sidebarOpened}
+            setSidebarOpened={setSidebarOpened}
+          />
+          <div
+            className={`w-full ${
+              sidebarOpened ? 'xl2:pl-[257px] pl-0' : 'pl-0'
+            }`}
+          >
+            {children}
+            <Footer />
+          </div>
         </div>
       </section>
     </>
