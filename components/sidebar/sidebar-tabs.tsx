@@ -1,16 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
+import { useRouter } from 'next/router'
 
 const SidebarTabs = () => {
   const { theme } = useTheme()
+  const router = useRouter()
 
   const sidebarTabs = {
     home: [
       {
         title: 'Dashboard',
-        icon: 'category.svg',
-        style: 'bg-primary text-white'
+        path: '/',
+        icon: 'category.svg'
+        // style: 'bg-primary text-white'
       },
       { title: 'Menu Style', icon: 'filter.svg', arrow: true, disabled: true }
     ],
@@ -22,7 +25,13 @@ const SidebarTabs = () => {
         arrow: true,
         disabled: true
       },
-      { title: 'Maps', icon: 'location.svg', arrow: true, link: '/maps' },
+      {
+        title: 'Maps',
+        path: '/maps',
+        icon: 'location.svg',
+        arrow: true,
+        link: '/maps'
+      },
       {
         title: 'Authentification',
         icon: 'shield-done.svg',
@@ -55,7 +64,7 @@ const SidebarTabs = () => {
             key={tab.title}
             className={`w-full h-[44px] px-6 py-2 flex justify-between items-center rounded-[4px] text-textColor2 ${
               tab.disabled && 'opacity-50'
-            } ${tab.style}`}
+            } ${router.pathname === tab.path && 'bg-primary text-white'}`}
           >
             <div className="flex gap-4">
               <Image
@@ -91,7 +100,7 @@ const SidebarTabs = () => {
             key={tab.title}
             className={`w-full h-[44px] px-6 py-2 flex justify-between items-center rounded-[4px] text-textColor2 ${
               tab.disabled && 'opacity-50'
-            }`}
+            } ${router.pathname === tab.path && 'bg-primary text-white'}`}
           >
             <div className="flex gap-4">
               <Image
@@ -129,6 +138,7 @@ const SidebarTabs = () => {
             className={`w-full h-[44px] px-6 py-2 flex justify-between items-center rounded-[4px] text-textColor2 ${
               tab.disabled && 'opacity-50'
             }`}
+            //* no path becuase none of the links are functional for now
           >
             <div className="flex gap-4">
               <Image
