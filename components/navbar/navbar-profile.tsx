@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/react'
 import { useTheme } from 'next-themes'
 import { useState } from 'react'
 import AlertPopup from '../alert-popup'
+import { getUsernameLetters } from '@/utils/get-username-initials'
 
 const NavbarDropdown = () => {
   const { data: session } = useSession()
@@ -28,13 +29,19 @@ const NavbarDropdown = () => {
       )}
 
       <DropdownMenu.Trigger asChild>
-        <img
-          src={session?.user?.image as string}
-          alt="user-profile"
-          width={45}
-          height={45}
-          className="rounded-[30px] cursor-pointer"
-        />
+        {session?.user?.image ? (
+          <img
+            src={session?.user?.image as string}
+            alt="user-profile"
+            width={45}
+            height={45}
+            className="rounded-[30px] cursor-pointer"
+          />
+        ) : (
+          <div className="min-w-[45px] min-h-[45px] bg-darkThemeBackground dark:bg-bg2 text-white dark:text-darkThemeBackground flex justify-center items-center rounded-full cursor-pointer font-semibold">
+            {session && getUsernameLetters(session?.user?.name as string)}
+          </div>
+        )}
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
