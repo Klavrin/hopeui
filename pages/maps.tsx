@@ -17,7 +17,7 @@ const Maps = () => {
   return (
     <Layout>
       <PageGraphicSide />
-      <div className="md:px-10 px-4 mb-5 relative md:bottom-14 bottom-0">
+      <div className="md:px-10 px-4 mb-5 md:mt-0 mt-10 relative md:bottom-14 bottom-0">
         <Map />
       </div>
     </Layout>
