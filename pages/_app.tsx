@@ -23,11 +23,7 @@ const App: React.FC<CustomAppProps> = ({
       </Head>
 
       <Provider session={session}>
-        <ThemeProvider
-          enableSystem
-          attribute="class"
-          forcedTheme={Component.theme}
-        >
+        <ThemeProvider attribute="class" forcedTheme={Component.theme}>
           <Component {...pageProps} />
         </ThemeProvider>
       </Provider>
