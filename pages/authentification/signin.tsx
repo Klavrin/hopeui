@@ -24,7 +24,7 @@ const SignIn = () => {
         <div className="text-center lg:w-[436px] max-w-[436px] lg:h-auto h-screen m-auto lg:px-0 px-6 lg:block flex flex-col justify-center">
           <Link href="/">
             <Image
-              src="/assets/logo.svg"
+              src="/assets/Logo.svg"
               alt="Hope Ui"
               width={125}
               height={42}
