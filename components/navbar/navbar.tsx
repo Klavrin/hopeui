@@ -13,7 +13,7 @@ const Navbar = ({ sidebarOpened }: NavbarProps) => {
 
   return (
     <header className="w-full bg-white dark:bg-darkThemeBackground">
-      <NavbarAlert />
+      {/* <NavbarAlert /> */}
       <nav
         className={`max-w-[1920px] mx-auto flex justify-between items-center px-8 py-4 ${
           sidebarOpened && 'lg:pl-[289px] pl-0'
